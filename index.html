@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TAMILNATION RELOADED</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- WELCOME SCREEN -->
+    <section id="welcome-screen">
+
+        <div class="welcome-content">
+
+            <p class="welcome-small">WELCOME TO</p>
+
+            <h1>TAMILNATION</h1>
+
+            <h2>RELOADED</h2>
+
+            <button id="view-btn">
+                <span>VIEW</span>
+                <div class="button-glow"></div>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN WEBSITE -->
+    <main id="main-menu" class="hidden">
+
+        <header class="site-header">
+
+            <div class="logo">
+                <span>TAMILNATION</span>
+                <small>RELOADED</small>
+            </div>
+
+            <div class="online-dot"></div>
+
+        </header>
+
+
+        <!-- MAIN CARDS -->
+        <section class="menu-buttons">
+
+            <!-- DISCORD -->
+            <button class="menu-card discord-card"
+                    onclick="openSection('discord')">
+
+                <div class="card-icon">💬</div>
+
+                <h3>DISCORD</h3>
+
+                <p>Join our official Discord community</p>
+
+                <span class="card-arrow">→</span>
+
+            </button>
+
+
+            <!-- MINECRAFT -->
+            <button class="menu-card minecraft-card"
+                    onclick="openSection('minecraft')">
+
+                <div class="card-icon">⛏️</div>
+
+                <h3>MINECRAFT</h3>
+
+                <p>Join the TAMILNATION server</p>
+
+                <span class="card-arrow">→</span>
+
+            </button>
+
+
+            <!-- TEAM -->
+            <button class="menu-card team-card"
+                    onclick="openSection('staff')">
+
+                <div class="card-icon">👑</div>
+
+                <h3>OUR TEAM</h3>
+
+                <p>Meet the TAMILNATION team</p>
+
+                <span class="card-arrow">→</span>
+
+            </button>
+
+        </section>
+
+
+        <!-- DISCORD BOX -->
+        <section id="discord" class="info-box hidden">
+
+            <button class="close-btn" onclick="closeSections()">×</button>
+
+            <div class="section-icon">💬</div>
+
+            <h2>JOIN OUR DISCORD</h2>
+
+            <p class="description">
+                Enter the official TAMILNATION RELOADED community.
+            </p>
+
+
+            <div class="data-box">
+
+                <span class="data-label">DISCORD INVITE</span>
+
+                <div class="copy-row">
+
+                    <span id="discordInvite">
+                        discord.gg/HjSBgfTcbb
+                    </span>
+
+                    <button onclick="copyText('https://discord.gg/HjSBgfTcbb', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="https://discord.gg/HjSBgfTcbb"
+                target="_blank"
+                class="action-btn discord-btn"
+            >
+                🚀 OPEN DISCORD
+            </a>
+
+            <p class="hint">
+                Clicking the button will open the Discord invite.
+            </p>
+
+        </section>
+
+
+        <!-- MINECRAFT BOX -->
+        <section id="minecraft" class="info-box hidden">
+
+            <button class="close-btn" onclick="closeSections()">×</button>
+
+            <div class="section-icon">⛏️</div>
+
+            <h2>TAMILNATION RELOADED</h2>
+
+            <p class="description">
+                Join our Minecraft server and start playing!
+            </p>
+
+
+            <!-- JAVA -->
+            <div class="server-platform">
+
+                <div class="platform-title">
+                    ☕ JAVA EDITION
+                </div>
+
+                <div class="data-box">
+
+                    <span class="data-label">JAVA SERVER IP</span>
+
+                    <div class="copy-row">
+
+                        <span>
+                            in6n.xitenodes.com:25654
+                        </span>
+
+                        <button onclick="copyText('in6n.xitenodes.com:25654', this)">
+                            COPY
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <p class="server-note">
+                    Java uses the IP and port together.
+                </p>
+
+            </div>
+
+
+            <!-- BEDROCK -->
+            <div class="server-platform">
+
+                <div class="platform-title">
+                    📱 BEDROCK EDITION
+                </div>
+
+                <div class="data-box">
+
+                    <span class="data-label">BEDROCK IP</span>
+
+                    <div class="copy-row">
+
+                        <span>
+                            in6n.xitenodes.com
+                        </span>
+
+                        <button onclick="copyText('in6n.xitenodes.com', this)">
+                            COPY
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="data-box">
+
+                    <span class="data-label">BEDROCK PORT</span>
+
+                    <div class="copy-row">
+
+                        <span>
+                            25654
+                        </span>
+
+                        <button onclick="copyText('25654', this)">
+                            COPY
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TEAM BOX -->
+        <section id="staff" class="info-box hidden">
+
+            <button class="close-btn" onclick="closeSections()">×</button>
+
+            <div class="section-icon">👑</div>
+
+            <h2>TAMILNATION TEAM</h2>
+
+            <p class="description">
+                Meet the people behind TAMILNATION RELOADED.
+            </p>
+
+
+            <!-- OWNER -->
+            <div class="staff-member owner">
+
+                <div class="rank">OWNER • FOUNDER</div>
+
+                <h3>👑 LUCIFER</h3>
+
+                <p>
+                    Owner & Founder of TAMILNATION RELOADED
+                </p>
+
+
+                <div class="contact-row">
+
+                    <span>Discord</span>
+
+                    <span class="contact-value">
+                        lucifer88yt
+                    </span>
+
+                    <button onclick="copyText('lucifer88yt', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span>Email</span>
+
+                    <span class="contact-value">
+                        prathishvairam@gmail.com
+                    </span>
+
+                    <button onclick="copyText('prathishvairam@gmail.com', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADMIN HIPPO -->
+            <div class="staff-member">
+
+                <div class="rank">ADMIN</div>
+
+                <h3>🛡️ HIPPO</h3>
+
+                <div class="contact-row">
+
+                    <span>Discord</span>
+
+                    <span class="contact-value">
+                        hippo_1235
+                    </span>
+
+                    <button onclick="copyText('hippo_1235', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADMIN SHADOW -->
+            <div class="staff-member">
+
+                <div class="rank">ADMIN</div>
+
+                <h3>🛡️ SHADOW</h3>
+
+                <div class="contact-row">
+
+                    <span>Discord</span>
+
+                    <span class="contact-value">
+                        shadowx.4964
+                    </span>
+
+                    <button onclick="copyText('shadowx.4964', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAFF DINO -->
+            <div class="staff-member">
+
+                <div class="rank">STAFF</div>
+
+                <h3>🔧 DINO</h3>
+
+                <div class="contact-row">
+
+                    <span>Discord</span>
+
+                    <span class="contact-value">
+                        dipesh_23
+                    </span>
+
+                    <button onclick="copyText('dipesh_23', this)">
+                        COPY
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                © 2026 TAMILNATION RELOADED
+            </p>
+
+            <span>
+                BUILT FOR THE COMMUNITY ⚡
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
