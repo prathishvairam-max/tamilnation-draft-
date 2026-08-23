@@ -1,27 +1,32 @@
 const viewButton = document.getElementById("view-btn");
-
 const welcomeScreen = document.getElementById("welcome-screen");
-
 const mainMenu = document.getElementById("main-menu");
+const toast = document.getElementById("toast");
 
 
-/* VIEW BUTTON */
+/* EXPLORE BUTTON */
 
 viewButton.addEventListener("click", () => {
 
-    welcomeScreen.classList.add("hidden");
+    welcomeScreen.style.opacity = "0";
+    welcomeScreen.style.transform = "scale(1.03)";
 
-    mainMenu.classList.remove("hidden");
+    setTimeout(() => {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+        welcomeScreen.classList.add("hidden");
+        mainMenu.classList.remove("hidden");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 500);
 
 });
 
 
-/* OPEN SECTION */
+/* OPEN A SECTION */
 
 function openSection(sectionId) {
 
@@ -42,7 +47,7 @@ function openSection(sectionId) {
 
             selectedSection.scrollIntoView({
                 behavior: "smooth",
-                block: "center"
+                block: "start"
             });
 
         }, 100);
@@ -52,7 +57,7 @@ function openSection(sectionId) {
 }
 
 
-/* CLOSE SECTION */
+/* CLOSE SECTIONS */
 
 function closeSections() {
 
@@ -77,24 +82,77 @@ async function copyText(text, button) {
 
         button.innerText = "COPIED ✓";
 
-        button.style.background = "#00ff88";
-
-        button.style.color = "#000";
+        showToast();
 
         setTimeout(() => {
-
             button.innerText = oldText;
-
-            button.style.background = "";
-
-            button.style.color = "";
-
         }, 1500);
 
     } catch (error) {
 
-        alert("Copy failed. Please copy it manually.");
+        /* Backup copy method */
+
+        const textarea = document.createElement("textarea");
+
+        textarea.value = text;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+
+        showToast();
 
     }
 
 }
+
+
+/* TOAST MESSAGE */
+
+function showToast() {
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+
+}
+
+
+/* INTERACTIVE MOUSE EFFECT FOR CARDS */
+
+const cards = document.querySelectorAll(".menu-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", (event) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = -(y - centerY) / 25;
+        const rotateY = (x - centerX) / 25;
+
+        card.style.transform =
+            `translateY(-15px) perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    });
+
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+
+    });
+
+});
