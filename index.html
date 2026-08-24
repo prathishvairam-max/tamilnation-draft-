@@ -32,7 +32,7 @@
                 <span class="tamil">TAMIL</span><span class="nation">NATION</span>
             </h1>
 
-            <h2>RELOADED</h2>
+            <h2><span id="rotating-word">RELOADED</span><span class="typing-cursor">|</span></h2>
 
             <p class="hero-description">
                 ENTER THE NEXT LEVEL OF THE TAMILNATION COMMUNITY.
@@ -85,7 +85,29 @@
 
 
         <!-- THREE UNIQUE SECTIONS -->
-        <section class="menu-buttons">
+        <section class="feature-hub">
+    <div class="feature-panel mission-panel">
+        <span class="feature-kicker">⚡ DAILY MISSION</span>
+        <p id="daily-mission">LOADING TODAY'S MISSION...</p>
+    </div>
+    <div class="feature-grid">
+        <button class="feature-panel terminal-launch" onclick="openTerminal()">
+            <span>🎮</span><div><small>QUICK ACCESS</small><strong>ACCESS TERMINAL</strong></div><b>↗</b>
+        </button>
+        <div class="feature-panel tip-panel">
+            <span class="feature-kicker">💡 SERVER TIP</span>
+            <p id="server-tip-text">Click NEXT TIP to discover a server tip.</p>
+            <button onclick="newTip()">NEXT TIP →</button>
+        </div>
+        <div class="feature-panel fact-panel">
+            <span class="feature-kicker">🏆 TAMILNATION FACTS</span>
+            <p id="fact-text">Click NEW FACT to discover something about the nation.</p>
+            <button onclick="newFact()">NEW FACT →</button>
+        </div>
+    </div>
+</section>
+
+<section class="menu-buttons">
 
 
             <!-- DISCORD -->
@@ -496,6 +518,32 @@
 
 
     <script src="script.js"></script>
+
+<!-- ACCESS TERMINAL -->
+<div id="terminal-modal" class="modal hidden">
+    <div class="terminal-window">
+        <button class="modal-close" onclick="closeTerminal()">×</button>
+        <div class="terminal-bar"><span></span><span></span><span></span><b>TAMILNATION_SECURE_TERMINAL</b></div>
+        <div id="terminal-output" class="terminal-output"></div>
+        <div id="terminal-actions" class="terminal-actions hidden">
+            <button onclick="terminalGo('discord')">DISCORD</button>
+            <button onclick="terminalGo('minecraft')">MINECRAFT</button>
+            <button onclick="terminalGo('team')">OUR TEAM</button>
+        </div>
+    </div>
+</div>
+
+<!-- SECRET EASTER EGG -->
+<div id="secret-modal" class="modal hidden">
+    <div class="secret-window">
+        <div class="secret-scan"></div>
+        <p>/// HIDDEN SIGNAL DETECTED ///</p>
+        <h2>SECRET ACCESS GRANTED</h2>
+        <div class="secret-badge">TN • ELITE EXPLORER</div>
+        <span>You found the hidden TAMILNATION Easter Egg. Welcome to the inner circle, explorer.</span>
+        <button onclick="closeSecret()">RETURN TO THE NATION</button>
+    </div>
+</div>
 
 </body>
 
